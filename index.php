@@ -142,7 +142,7 @@
 						<h4 class="modal-title" id="myModalLabel"><?php echo $_POST['zone']. " (".$waktu.")"; ?></h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body mb-4 mt-4">
 					<?php
 					foreach($data as $value){
 						if($_POST['zone']!=$value['key']) {
