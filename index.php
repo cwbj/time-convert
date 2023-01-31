@@ -47,6 +47,7 @@
 					'Asia/Colombo'      => "Colombo/Sri Lanka",
 					'Asia/Kathmandu'    => "Kathmandu/Nepal",
 					'Asia/Yangon'       => "Yangon/Myanmar",
+					'Asia/Phnom_Penh'	=> "Phnom Penh/Cambodia",
 					'Asia/Makassar'     => "Makassar/Bali",
 					'Asia/Manila'       => "Manila/Philippines",
 					'Asia/Tokyo'        => "Tokyo/Japan"
