@@ -16,7 +16,7 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<title>Time Convert App</title>
+	<title>Time Difference App - CWB</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5 mr-auto">
-					<h3 class="mb-3">Time Convert App</h3>
+					<h3 class="mb-3">Time Difference App</h3>
 					<p>This App used to convert the inserted time to the other countries' local time. You only need to input
 						it on the form and choose the local time that you want to convert.</p>
 					<p>This app is still in BETA and everyone could make some suggest on the app.</p>
