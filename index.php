@@ -158,14 +158,21 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body mb-4 mt-4">
-					<?php
-					foreach($data as $value){
-						if($_POST['zone']!=$value['key']) {
-							echo "<div class='row'><div class='col-5'><small><input id='" .$value['title']. "' style='width:100%' type='text' value='" .$value['title']. " " .$value['result'] ."'></small></div><div class='col-5'><button class='btn-sm kecil' onclick='myFunction(\"".$value['title']."\")'>Copy text</button></div>";
-							echo "</div>";
-						}
-					}
-					?>
+						<div class='row'>
+							<div class='col-md-12'><small>
+							<textarea id="textnya" style='width:100%;height: 200px;' sizeof="3">
+<?php
+foreach($data as $value){
+	if($_POST['zone']!=$value['key']) {
+		echo $value['title']. " " .$value['result']."\n";
+	}
+}
+?></textarea></small>
+							</div>
+							<div class='col-md-12'>
+							<button class='btn-sm kecil' onclick='myFunction()'>Copy text</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -176,9 +183,9 @@
 		?>
 		
 	<script>
-		function myFunction(val) {
+		function myFunction() {
 			// Get the text field
-			var copyText = document.getElementById(val);
+			var copyText = document.getElementById('textnya');
 
 			// Select the text field
 			copyText.select();
@@ -188,7 +195,7 @@
 			navigator.clipboard.writeText(copyText.value);
 
 			// Alert the copied text
-			alert("Copied the text: " + copyText.value);
+			alert("Copied the text: \n" + copyText.value);
 		}
 	</script>
 </body>
