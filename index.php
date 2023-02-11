@@ -91,6 +91,12 @@
 							</div>
 						</form>
 
+						<div class="row">
+							<div class="col-md-12">
+								<div class="version">CWB &copy;<?php if(Date('Y') == "2023") echo "2023"; else echo "2023 - ".Date('Y'); ?><br><b>v0.2 (beta)</b></div>
+							</div>
+						</div>
+
 						<div id="form-message-warning mt-4"></div>
 						<div id="form-message-success">
 							Your message was sent, thank you!
