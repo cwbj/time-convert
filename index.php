@@ -161,7 +161,7 @@
 					<?php
 					foreach($data as $value){
 						if($_POST['zone']!=$value['key']) {
-							echo "<div class='row'><div class='col-md-8'><small><input id='" .$value['title']. "' style='width:100%' type='text' value='" .$value['title']. " " .$value['result'] ."'></small></div><div><button class='btn-sm kecil' onclick='myFunction(\"".$value['title']."\")'>Copy text</button></div>";
+							echo "<div class='row'><div class='col-5'><small><input id='" .$value['title']. "' style='width:100%' type='text' value='" .$value['title']. " " .$value['result'] ."'></small></div><div class='col-5'><button class='btn-sm kecil' onclick='myFunction(\"".$value['title']."\")'>Copy text</button></div>";
 							echo "</div>";
 						}
 					}
