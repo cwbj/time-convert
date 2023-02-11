@@ -43,14 +43,14 @@
 				// 	);
 
 				$timezones = array(
-					'Asia/Kolkata'      => "Kolkata/India",
-					'Asia/Colombo'      => "Colombo/Sri Lanka",
-					'Asia/Kathmandu'    => "Kathmandu/Nepal",
-					'Asia/Yangon'       => "Yangon/Myanmar",
-					'Asia/Phnom_Penh'	=> "Phnom Penh/Cambodia",
-					'Asia/Makassar'     => "Makassar/Bali",
-					'Asia/Manila'       => "Manila/Philippines",
-					'Asia/Tokyo'        => "Tokyo/Japan"
+					'Asia/Kolkata'      => "India",
+					'Asia/Colombo'      => "Sri Lanka",
+					'Asia/Kathmandu'    => "Nepal",
+					'Asia/Yangon'       => "Myanmar",
+					'Asia/Phnom_Penh'	=> "Cambodia",
+					'Asia/Makassar'     => "Bali",
+					'Asia/Manila'       => "Philippines",
+					'Asia/Tokyo'        => "Japan"
 					);
 				?>
 
@@ -140,14 +140,22 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title" id="myModalLabel"><?php echo $_POST['zone']. " (".$waktu.")"; ?></h4>
+						<h4 class="modal-title" id="myModalLabel">
+							<?php 
+							foreach($data as $value){
+								if($_POST['zone']==$value['key']) {
+									echo $value['title']. " (".$waktu.")";
+								} 
+							}
+							?>
+						</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body mb-4 mt-4">
 					<?php
 					foreach($data as $value){
 						if($_POST['zone']!=$value['key']) {
-							echo "<div class='row'><div class='col-md-6'>". $value['title']. "</div><div class='col-md-2'> <small><input type='text' value='" .$value['result'] ."'></small></div>";
+							echo "<div class='row'><div class='col-md-8'><small><input id='" .$value['title']. "' style='width:100%' type='text' value='" .$value['title']. " " .$value['result'] ."'></small></div><div><button class='btn-sm kecil' onclick='myFunction(\"".$value['title']."\")'>Copy text</button></div>";
 							echo "</div>";
 						}
 					}
@@ -161,11 +169,22 @@
 		}
 		?>
 		
+	<script>
+		function myFunction(val) {
+			// Get the text field
+			var copyText = document.getElementById(val);
 
+			// Select the text field
+			copyText.select();
+			copyText.setSelectionRange(0, 99999); // For mobile devices
 
+			// Copy the text inside the text field
+			navigator.clipboard.writeText(copyText.value);
 
-		
-
+			// Alert the copied text
+			alert("Copied the text: " + copyText.value);
+		}
+	</script>
 </body>
 
 </html>

@@ -113,3 +113,7 @@ label.error {
 .modal-body {
   color: #000;
 }
+.kecil {
+  padding: 3px 6px;
+  font-size: 12px;
+}
